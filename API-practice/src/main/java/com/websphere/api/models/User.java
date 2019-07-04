@@ -36,6 +36,8 @@ public class User {
 	
 	// Constructors
 	
+	public User() { }
+	
 	public User(String userName, String password) {
 		this.userName = userName;
 		this.password = password;
@@ -47,8 +49,12 @@ public class User {
 		return this.ID;
 	}
 	
-	public String getUserName(String userName) {
+	public String getUserName() {
 		return this.userName;
+	}
+	
+	public String getPassword() {
+		return this.password;
 	}
 	
 	// Setters

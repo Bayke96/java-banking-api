@@ -12,10 +12,10 @@ public abstract class BCrypt {
 			return encryptedPass;
 		}
 		
-		public static boolean verifyPassword(String passwordA, String passwordB) {
+		public static boolean verifyPassword(String rawPassword, String hashedPassword) {
 			boolean result = false;
 			BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(14);
-			result = encoder.matches(passwordA, passwordB);
+			result = encoder.matches(rawPassword, hashedPassword);
 			return result;
 		}
 	}
