@@ -2,6 +2,7 @@ package com.banking.api.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -10,10 +11,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIdentityReference;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
 @Table(name = "profile")
@@ -27,10 +24,8 @@ public class UserProfile {
 	private int ID;
 	
 	@NotNull(message = "La FK del usuario no puede ser nula!")
-	@ManyToOne
-	@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "ID")
-	@JsonIdentityReference(alwaysAsId = true)
-	@JoinColumn(name = "UserFK")
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "UserFK", unique = true)
 	private User userFK;
 	
 	@Column(name = "RUN", unique = true)
@@ -66,6 +61,10 @@ public class UserProfile {
 	// Constructor
 	
 	public UserProfile() { }
+	
+	public UserProfile(User userFK) {
+		this.userFK = userFK;
+	}
 	
 	// Getters
 	

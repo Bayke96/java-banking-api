@@ -1,13 +1,30 @@
 package com.banking.api.services;
 
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+import com.banking.api.models.UserProfile;
 
-@Service
-@Transactional
 public class ProfileService {
 	
 	public static class ProfileServices {
+		
+		public UserProfile getProfile(int id) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		public UserProfile createProfile(UserProfile profile) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		public UserProfile editProfile(int id, UserProfile profile) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		public UserProfile deleteProfile(int id) {
+			// TODO Auto-generated method stub
+			return null;
+		}
 		
 	}
 

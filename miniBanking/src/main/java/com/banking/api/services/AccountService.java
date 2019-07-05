@@ -1,13 +1,30 @@
 package com.banking.api.services;
 
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+import com.banking.api.models.Account;
 
-@Service
-@Transactional
 public class AccountService {
-
+	
 	public static class AccountServices {
+		
+		public Account getAccount(int id) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		public Account createAccount(Account account) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		public Account updateAccount(Account account) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		public Account deleteAccount(Account account) {
+			// TODO Auto-generated method stub
+			return null;
+		}
 		
 	}
 	
